@@ -1,7 +1,11 @@
 import { ArrowsClockwise, ChatCircle, Heart } from "@phosphor-icons/react";
 import "./Tweet.css";
 
-export function Tweet() {
+interface ContentTweet {
+  content: string;
+}
+
+export function Tweet(props: ContentTweet) {
   return (
     <a href="#" className="tweet">
       <img src="https://github.com/GitHudsonLima.png" alt="Hudson Lima" />
@@ -12,7 +16,7 @@ export function Tweet() {
           <span>@limahudson</span>
         </div>
 
-        <p>I am so happy with code create-react-app for Vite and its results</p>
+        <p>{props.content}</p>
         <div className="tweet-content-footer">
           <button type="button">
             <ChatCircle />
